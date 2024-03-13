@@ -103,13 +103,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="EON Summer School 2024 - Collection of validation data in the context of remote sensing based forest monitoring">
-<meta property="og:description" content="Tutorial for the EON Summer School 2023">
+<meta property="og:description" content="Tutorial for the EON Summer School 2024">
 <meta property="og:image" content="https://earth-observation-network.github.io/EON2024/paul_tutorial/02_ValidationDataCollection_files/figure-html/RMSEest-1.png">
 <meta property="og:site-name" content="EON Summer School 2024">
 <meta property="og:image:height" content="960">
 <meta property="og:image:width" content="1344">
 <meta name="twitter:title" content="EON Summer School 2024 - Collection of validation data in the context of remote sensing based forest monitoring">
-<meta name="twitter:description" content="Tutorial for the EON Summer School 2023">
+<meta name="twitter:description" content="Tutorial for the EON Summer School 2024">
 <meta name="twitter:image" content="https://earth-observation-network.github.io/EON2024/paul_tutorial/02_ValidationDataCollection_files/figure-html/RMSEest-1.png">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:image-height" content="960">
@@ -268,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Collection of validation data in the context of remote sensing based forest monitoring</h1>
-<p class="subtitle lead">Tutorial for the EON Summer School 2023</p>
+<p class="subtitle lead">Tutorial for the EON Summer School 2024</p>
 </div>
 
 
@@ -365,7 +365,7 @@ RMSE = \sqrt{\frac{1}{N}\sum{(z(x_{ctor. Also today there was wind, not good for
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sample <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">extract</span>((agb_pop<span class="sc">-</span>agb_model),<span class="fu">as_Spatial</span>(p1))</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>RMSE_est <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((sample)<span class="sc">^</span><span class="dv">2</span>,<span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The random sample estimates the RMSE as 47.33.</p>
+<p>The random sample estimates the RMSE as 45.04.</p>
 <p>But is this an unbiased estimate?</p>
 </section>
 <section id="simulation-of-many-random-samples" class="level1">
@@ -440,7 +440,7 @@ RMSE = \sqrt{\frac{1}{N}\sum{(z(x_{ctor. Also today there was wind, not good for
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(RMSE_2)<span class="sc">/</span><span class="fu">sd</span>(RMSE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6466409</code></pre>
+<pre><code>[1] 0.7195445</code></pre>
 </div>
 </div>
 </section>

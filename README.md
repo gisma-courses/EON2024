@@ -1,1 +1,1 @@
-# EON Summer School 2023
+# EON Summer School 2024

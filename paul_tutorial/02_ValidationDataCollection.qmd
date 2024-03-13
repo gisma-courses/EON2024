@@ -1,7 +1,7 @@
 ---
 title: "Collection of validation data in the context of remote sensing based 
         forest monitoring"
-subtitle: "Tutorial for the EON Summer School 2023"
+subtitle: "Tutorial for the EON Summer School 2024"
 author: Paul Magdon[University of Applied Sciences and Arts (HAWK), paul.magdon@hawk.de]
 date: "2023-29-08"
 ---
