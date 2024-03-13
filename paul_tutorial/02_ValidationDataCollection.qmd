@@ -13,7 +13,7 @@ library(rmarkdown)
 library(sf)
 library(raster)
 library(ggplot2)
-library("rprojroot")
+library(rprojroot)
 wd=paste0(find_rstudio_root_file(),"/paul_tutorial/data/")
 
 ```

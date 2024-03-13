@@ -23,7 +23,7 @@ library(patchwork)
 library(mapview)
 library(kableExtra)
 library(rmarkdown)
-library("rprojroot")
+library(rprojroot)
 ```
 
 # Data sets
@@ -102,15 +102,15 @@ In the next step we take a stratified random sample with $n=10$ points from each
 of the 5 spectral classes.
 
 ```{r sampling}
-samples <- sampleStratified(cluster$map,size = 10,na.rm=T,xy=T,sp=T)
-samples$class <- as.factor(samples$class)
+samples <- sampleStratified(raster(cluster$map),size = 10,na.rm=T,xy=T,sp=T)
+samples$class_unsupervised <- as.factor(samples$class_unsupervised)
 my.palette <- rainbow(5)
 point.size <- 0.5
 
 np.layer <- list("sp.polygons", as_Spatial(np_boundary))
 
 
-spplot(samples,'class', col.regions = my.palette, sp.layout = np.layer,
+spplot(samples,'class_unsupervised', col.regions = my.palette, sp.layout = np.layer,
     cex = point.size, main = "Stratified random sample for training")
 ```
 
@@ -118,7 +118,7 @@ We can now print the sample plot list as following:
 
 ```{r print, results='asis'}
 
-kable(samples@data[c('x','y','class')], caption='Training plot list') %>%
+kable(samples@data[c('x','y','class_unsupervised')], caption='Training plot list') %>%
   kable_styling(fixed_thead = T) %>% scroll_box(height = "400px")
 ```
 
@@ -128,7 +128,7 @@ kable(samples@data[c('x','y','class')], caption='Training plot list') %>%
 # Create a training data set by extracting the mean value of all pixels touching
 # a buffered area with 13m around the plot center
 train<-raster::extract(s2,samples,sp=T,buffer=13,fun='mean')
-mapview(train, zcol="class",
+mapview(train, zcol="class_unsupervised",
         map.types = c("Esri.WorldShadedRelief", "OpenStreetMap.DE"))+
   mapview(np_boundary,alpha.regions = 0.2, aplha = 1)
 ```
