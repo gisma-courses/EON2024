@@ -34,8 +34,8 @@ website:
       - text: "---"
       - section: "Training Data"
         contents: 
-          - paul_tutorial/01_TrainingDataCollection.qmd
-          - paul_tutorial/02_ValidationDataCollection.qmd
+          - tdv_session/01_TrainingDataCollection.qmd
+          - tdv_session/02_ValidationDataCollection.qmd
       - text: "---"
       - section: "Microclimate Data Retrieval & Spatial Data Interpolation"
         contents:
@@ -45,7 +45,7 @@ website:
       - text: "---"
       - section: "Machine Learning"
         contents:
-          - Machine_Learning_Session/ML_AOA.qmd
+          - ml_session/ML_AOA.qmd
           # - href: https://gisma-courses.github.io/LV-uav-workflow/modules/module-introduction/
           #   text: Basic Readings        
           # - href: https://gisma-courses.github.io/LV-uav-workflow/modules/module-fieldwork/
